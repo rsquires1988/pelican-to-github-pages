@@ -23,6 +23,8 @@ pelican ${PELICAN_CONTENT_FOLDER:=content} -s ${PELICAN_CONFIG_FILE:=publishconf
 
 echo 'Publishing to GitHub Pages 📤 '
 git init
+chown -R $(id -u):$(id -g) $PWD
+git config --global --add safe.directory '*'
 git remote add deploy "$remote_repo"
 git checkout $remote_branch || git checkout --orphan $remote_branch
 git config user.name "${GITHUB_ACTOR}"
