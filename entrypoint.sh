@@ -19,7 +19,8 @@ if [ -n "$PELICAN_THEME_FOLDER" ]; then
 fi
 
 echo 'Building site 👷 '
-pelican ${PELICAN_CONTENT_FOLDER:=content} -s ${PELICAN_CONFIG_FILE:=publishconf.py}
+#pelican ${PELICAN_CONTENT_FOLDER:=content} -s ${PELICAN_CONFIG_FILE:=publishconf.py}
+pelican ${PELICAN_CONTENT_FOLDER:=content} -s ${PELICAN_CONFIG_FILE:=pelicanconf.py}
 
 echo 'Publishing to GitHub Pages 📤 '
 git init
